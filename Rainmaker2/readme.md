@@ -1,2 +1,2 @@
-# goals
-* soak as much up
+# Goals
+* Soak as much up
