@@ -1,0 +1,2045 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/17/2021 1:18:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HEKAHEDRON"
+  DTS:CreatorName="HEKAHEDRON\andre"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{A24B4A83-A38B-48A4-B6BD-49ED405759FF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.162"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Pokemon"
+  DTS:ProtectionLevel="0"
+  DTS:VersionGUID="{8CD46430-2E70-4B6A-9831-45E7474BAF25}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FC557D60-5E30-4A99-9128-432C10661A94}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=HEKAHEDRON;Initial Catalog=AP;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A1CCD020-D754-4C11-927A-DDAA730C5158}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\2021_10_DSI-WD\2021_10_DSI_WD\drew.minkin@divergence.one\Pokemon.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Number"
+              DTS:DTSID="{5433A2D5-8159-4AAC-B4FF-F4A211ACF1EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="27"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{E733E433-C3D1-49DE-903C-4C5FC8A93F06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type 1"
+              DTS:DTSID="{821D7F1B-B8F0-48F0-B7BD-1131383C1505}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type 2"
+              DTS:DTSID="{D3DD7108-D03D-4546-B36C-1AE23FD87728}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="48"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Abilities"
+              DTS:DTSID="{735D99DC-97EA-44AD-B3A1-90EDA3C8F5A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HP"
+              DTS:DTSID="{148E989C-21ED-4FB0-9B9D-630B64E879B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Att"
+              DTS:DTSID="{F2A573CC-3B42-40FB-9A0C-29141D143043}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Def"
+              DTS:DTSID="{7585945D-97C9-4FCA-9C01-C0A5A0C777F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spa"
+              DTS:DTSID="{883230E4-8234-48B3-891D-EC7EEC51ED1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spd"
+              DTS:DTSID="{655D6C0C-FC85-4508-A2D5-AC77095E474C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Spe"
+              DTS:DTSID="{78958759-B1A3-494B-804D-40DCDD28A3DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BST"
+              DTS:DTSID="{8AE20C65-ECCF-46A4-BB45-E0B13DD47FC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mean"
+              DTS:DTSID="{01BAF32E-0DFF-4FFE-A020-A9113DBDA861}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Standard Deviation"
+              DTS:DTSID="{C26B990D-2B9F-4C36-BA41-7C6B52E0516A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Generation"
+              DTS:DTSID="{246D3F78-EEB9-4A80-997B-67AEA993A235}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Experience type"
+              DTS:DTSID="{7927C81D-C35E-42FF-9E10-B48E5632EB76}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Experience to level 100"
+              DTS:DTSID="{689EE71D-C9A9-4749-BAD6-8E6A2BC04327}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Final Evolution"
+              DTS:DTSID="{50E98A8D-84D7-459A-83A7-825FAA9BA4A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Catch Rate"
+              DTS:DTSID="{204912C4-CDF9-462C-BD11-9665267E6908}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Legendary"
+              DTS:DTSID="{2E6E842D-8BB2-448C-8FDF-5F711ACC5925}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mega Evolution"
+              DTS:DTSID="{EF3FE65D-F4FE-4956-B9E3-7D2F781AE00D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Alolan Form"
+              DTS:DTSID="{0BB7D3B9-67C9-4089-BDFB-7F7B7D4A9C41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Galarian Form"
+              DTS:DTSID="{399339C2-478E-40B2-B3E4-9FB00FE62EF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Normal"
+              DTS:DTSID="{BABCFEF1-01A2-45AB-9FEB-ECCB7E6AACA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Fire"
+              DTS:DTSID="{0E126634-0DCB-404D-947B-CE5D555F6A5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Water"
+              DTS:DTSID="{57206823-5554-4BF4-9AAF-A6A7AEEA0805}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Electric"
+              DTS:DTSID="{C7401B15-96A5-40EB-A3E0-F9083F6153CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Grass"
+              DTS:DTSID="{C25EAB7B-EBD6-4789-AA23-02F4BD530F74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Ice"
+              DTS:DTSID="{4A5B177C-69D2-4034-BB29-EFF1859D2CC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Fighting"
+              DTS:DTSID="{916FB8C3-ADB6-41B3-A421-FA84D30D5356}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Poison"
+              DTS:DTSID="{33F31279-DE6E-48BB-B32D-847341FB3880}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Ground"
+              DTS:DTSID="{B1E335F4-5766-4569-98C0-8B8E906831BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Flying"
+              DTS:DTSID="{A1A7BE07-9AEB-4146-A795-B48275F16C22}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Psychic"
+              DTS:DTSID="{B8101B0A-D7CC-4E6D-B416-843D624CEC46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Bug"
+              DTS:DTSID="{62D42F9C-3636-4717-A747-5A39844D0B7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Rock"
+              DTS:DTSID="{86BF0221-6BEA-44EC-8617-7B6C936A3AC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Ghost"
+              DTS:DTSID="{A6249C69-A3CF-45D6-A599-004F6B6D81D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Dragon"
+              DTS:DTSID="{9D9146DF-2935-4EEE-957E-1091679598B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Dark"
+              DTS:DTSID="{347F33B0-063C-4538-8556-875AF4DF716B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Steel"
+              DTS:DTSID="{45D9D6E5-4490-442A-A38D-F74864737E87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Against Fairy"
+              DTS:DTSID="{3260B639-BE30-4CAB-9BF2-B75E2C02980A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{9C076D23-9602-4643-9F22-3C576A006919}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Pokemon_Wizard"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Pokemon_Wizard]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Number]"
+                      cachedDataType="i2"
+                      cachedName="Number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Number]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="27"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Type 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Type 1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Type 1]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Type 1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Type 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Type 2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Type 2]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Type 2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Abilities]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="48"
+                      cachedName="Abilities"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Abilities]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Abilities]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[HP]"
+                      cachedDataType="i2"
+                      cachedName="HP"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[HP]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[HP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Att]"
+                      cachedDataType="i2"
+                      cachedName="Att"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Att]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Att]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Def]"
+                      cachedDataType="i2"
+                      cachedName="Def"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Def]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Def]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Spa]"
+                      cachedDataType="i2"
+                      cachedName="Spa"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Spa]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spa]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Spd]"
+                      cachedDataType="i2"
+                      cachedName="Spd"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Spd]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spd]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Spe]"
+                      cachedDataType="i2"
+                      cachedName="Spe"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Spe]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spe]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[BST]"
+                      cachedDataType="i2"
+                      cachedName="BST"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[BST]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[BST]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Mean]"
+                      cachedDataType="r4"
+                      cachedName="Mean"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Mean]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Mean]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Standard Deviation]"
+                      cachedDataType="r4"
+                      cachedName="Standard Deviation"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Standard Deviation]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Standard Deviation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Generation]"
+                      cachedDataType="r4"
+                      cachedName="Generation"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Generation]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Generation]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Experience type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="Experience type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Experience type]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Experience type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Experience to level 100]"
+                      cachedDataType="i4"
+                      cachedName="Experience to level 100"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Experience to level 100]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Experience to level 100]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Final Evolution]"
+                      cachedDataType="r4"
+                      cachedName="Final Evolution"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Final Evolution]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Final Evolution]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Catch Rate]"
+                      cachedDataType="i2"
+                      cachedName="Catch Rate"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Catch Rate]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Catch Rate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Legendary]"
+                      cachedDataType="r4"
+                      cachedName="Legendary"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Legendary]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Legendary]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Mega Evolution]"
+                      cachedDataType="r4"
+                      cachedName="Mega Evolution"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Mega Evolution]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Mega Evolution]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Alolan Form]"
+                      cachedDataType="r4"
+                      cachedName="Alolan Form"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Alolan Form]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Alolan Form]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Galarian Form]"
+                      cachedDataType="r4"
+                      cachedName="Galarian Form"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Galarian Form]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Galarian Form]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Normal]"
+                      cachedDataType="r4"
+                      cachedName="Against Normal"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Normal]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Normal]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Fire]"
+                      cachedDataType="r4"
+                      cachedName="Against Fire"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Fire]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fire]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Water]"
+                      cachedDataType="r4"
+                      cachedName="Against Water"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Water]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Water]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Electric]"
+                      cachedDataType="r4"
+                      cachedName="Against Electric"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Electric]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Electric]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Grass]"
+                      cachedDataType="r4"
+                      cachedName="Against Grass"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Grass]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Grass]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Ice]"
+                      cachedDataType="r4"
+                      cachedName="Against Ice"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Ice]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ice]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Fighting]"
+                      cachedDataType="r4"
+                      cachedName="Against Fighting"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Fighting]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fighting]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Poison]"
+                      cachedDataType="r4"
+                      cachedName="Against Poison"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Poison]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Poison]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Ground]"
+                      cachedDataType="r4"
+                      cachedName="Against Ground"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Ground]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ground]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Flying]"
+                      cachedDataType="r4"
+                      cachedName="Against Flying"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Flying]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Flying]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Psychic]"
+                      cachedDataType="r4"
+                      cachedName="Against Psychic"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Psychic]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Psychic]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Bug]"
+                      cachedDataType="r4"
+                      cachedName="Against Bug"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Bug]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Bug]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Rock]"
+                      cachedDataType="r4"
+                      cachedName="Against Rock"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Rock]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Rock]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Ghost]"
+                      cachedDataType="r4"
+                      cachedName="Against Ghost"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Ghost]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ghost]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Dragon]"
+                      cachedDataType="r4"
+                      cachedName="Against Dragon"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Dragon]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Dragon]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Dark]"
+                      cachedDataType="r4"
+                      cachedName="Against Dark"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Dark]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Dark]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Steel]"
+                      cachedDataType="r4"
+                      cachedName="Against Steel"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Steel]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Steel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].Columns[Against Fairy]"
+                      cachedDataType="r4"
+                      cachedName="Against Fairy"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Fairy]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fairy]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Number]"
+                      dataType="i2"
+                      name="Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="27"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Type 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Type 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Type 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Type 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Abilities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      name="Abilities" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[HP]"
+                      dataType="i2"
+                      name="HP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Att]"
+                      dataType="i2"
+                      name="Att" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Def]"
+                      dataType="i2"
+                      name="Def" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Spa]"
+                      dataType="i2"
+                      name="Spa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Spd]"
+                      dataType="i2"
+                      name="Spd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Spe]"
+                      dataType="i2"
+                      name="Spe" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[BST]"
+                      dataType="i2"
+                      name="BST" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Mean]"
+                      dataType="r4"
+                      name="Mean" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Standard Deviation]"
+                      dataType="r4"
+                      name="Standard Deviation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Generation]"
+                      dataType="r4"
+                      name="Generation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Experience type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="Experience type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Experience to level 100]"
+                      dataType="i4"
+                      name="Experience to level 100" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Final Evolution]"
+                      dataType="r4"
+                      name="Final Evolution" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Catch Rate]"
+                      dataType="i2"
+                      name="Catch Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Legendary]"
+                      dataType="r4"
+                      name="Legendary" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Mega Evolution]"
+                      dataType="r4"
+                      name="Mega Evolution" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Alolan Form]"
+                      dataType="r4"
+                      name="Alolan Form" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Galarian Form]"
+                      dataType="r4"
+                      name="Galarian Form" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Normal]"
+                      dataType="r4"
+                      name="Against Normal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Fire]"
+                      dataType="r4"
+                      name="Against Fire" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Water]"
+                      dataType="r4"
+                      name="Against Water" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Electric]"
+                      dataType="r4"
+                      name="Against Electric" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Grass]"
+                      dataType="r4"
+                      name="Against Grass" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Ice]"
+                      dataType="r4"
+                      name="Against Ice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Fighting]"
+                      dataType="r4"
+                      name="Against Fighting" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Poison]"
+                      dataType="r4"
+                      name="Against Poison" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Ground]"
+                      dataType="r4"
+                      name="Against Ground" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Flying]"
+                      dataType="r4"
+                      name="Against Flying" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Psychic]"
+                      dataType="r4"
+                      name="Against Psychic" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Bug]"
+                      dataType="r4"
+                      name="Against Bug" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Rock]"
+                      dataType="r4"
+                      name="Against Rock" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Ghost]"
+                      dataType="r4"
+                      name="Against Ghost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Dragon]"
+                      dataType="r4"
+                      name="Against Dragon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Dark]"
+                      dataType="r4"
+                      name="Against Dark" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Steel]"
+                      dataType="r4"
+                      name="Against Steel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input].ExternalColumns[Against Fairy]"
+                      dataType="r4"
+                      name="Against Fairy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - Pokemon_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - Pokemon_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - Pokemon_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Number]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Number]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Number]"
+                      name="Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      length="27"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Type 1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Type 1]"
+                      length="8"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Type 1]"
+                      name="Type 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Type 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Type 2]"
+                      length="8"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Type 2]"
+                      name="Type 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Abilities]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Abilities]"
+                      length="48"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Abilities]"
+                      name="Abilities"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[HP]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[HP]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[HP]"
+                      name="HP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Att]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Att]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Att]"
+                      name="Att"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Def]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Def]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Def]"
+                      name="Def"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spa]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Spa]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spa]"
+                      name="Spa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spd]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Spd]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spd]"
+                      name="Spd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spe]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Spe]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Spe]"
+                      name="Spe"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[BST]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[BST]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[BST]"
+                      name="BST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Mean]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Mean]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Mean]"
+                      name="Mean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Standard Deviation]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Standard Deviation]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Standard Deviation]"
+                      name="Standard Deviation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Generation]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Generation]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Generation]"
+                      name="Generation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Experience type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Experience type]"
+                      length="11"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Experience type]"
+                      name="Experience type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Experience to level 100]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Experience to level 100]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Experience to level 100]"
+                      name="Experience to level 100"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Final Evolution]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Final Evolution]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Final Evolution]"
+                      name="Final Evolution"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Catch Rate]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Catch Rate]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Catch Rate]"
+                      name="Catch Rate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Legendary]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Legendary]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Legendary]"
+                      name="Legendary"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Mega Evolution]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Mega Evolution]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Mega Evolution]"
+                      name="Mega Evolution"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Alolan Form]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Alolan Form]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Alolan Form]"
+                      name="Alolan Form"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Galarian Form]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Galarian Form]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Galarian Form]"
+                      name="Galarian Form"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Normal]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Normal]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Normal]"
+                      name="Against Normal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fire]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Fire]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fire]"
+                      name="Against Fire"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Water]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Water]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Water]"
+                      name="Against Water"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Electric]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Electric]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Electric]"
+                      name="Against Electric"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Grass]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Grass]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Grass]"
+                      name="Against Grass"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ice]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Ice]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ice]"
+                      name="Against Ice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fighting]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Fighting]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fighting]"
+                      name="Against Fighting"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Poison]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Poison]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Poison]"
+                      name="Against Poison"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ground]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Ground]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ground]"
+                      name="Against Ground"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Flying]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Flying]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Flying]"
+                      name="Against Flying"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Psychic]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Psychic]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Psychic]"
+                      name="Against Psychic"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Bug]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Bug]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Bug]"
+                      name="Against Bug"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Rock]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Rock]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Rock]"
+                      name="Against Rock"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ghost]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Ghost]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Ghost]"
+                      name="Against Ghost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Dragon]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Dragon]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Dragon]"
+                      name="Against Dragon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Dark]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Dark]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Dark]"
+                      name="Against Dark"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Steel]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Steel]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Steel]"
+                      name="Against Steel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fairy]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Fairy]"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].Columns[Against Fairy]"
+                      name="Against Fairy"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Number]"
+                      dataType="i2"
+                      name="Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="27"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Type 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Type 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Type 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Type 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Abilities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="48"
+                      name="Abilities" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[HP]"
+                      dataType="i2"
+                      name="HP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Att]"
+                      dataType="i2"
+                      name="Att" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Def]"
+                      dataType="i2"
+                      name="Def" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Spa]"
+                      dataType="i2"
+                      name="Spa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Spd]"
+                      dataType="i2"
+                      name="Spd" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Spe]"
+                      dataType="i2"
+                      name="Spe" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[BST]"
+                      dataType="i2"
+                      name="BST" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Mean]"
+                      dataType="r4"
+                      name="Mean" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Standard Deviation]"
+                      dataType="r4"
+                      name="Standard Deviation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Generation]"
+                      dataType="r4"
+                      name="Generation" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Experience type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="Experience type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Experience to level 100]"
+                      dataType="i4"
+                      name="Experience to level 100" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Final Evolution]"
+                      dataType="r4"
+                      name="Final Evolution" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Catch Rate]"
+                      dataType="i2"
+                      name="Catch Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Legendary]"
+                      dataType="r4"
+                      name="Legendary" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Mega Evolution]"
+                      dataType="r4"
+                      name="Mega Evolution" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Alolan Form]"
+                      dataType="r4"
+                      name="Alolan Form" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Galarian Form]"
+                      dataType="r4"
+                      name="Galarian Form" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Normal]"
+                      dataType="r4"
+                      name="Against Normal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Fire]"
+                      dataType="r4"
+                      name="Against Fire" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Water]"
+                      dataType="r4"
+                      name="Against Water" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Electric]"
+                      dataType="r4"
+                      name="Against Electric" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Grass]"
+                      dataType="r4"
+                      name="Against Grass" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Ice]"
+                      dataType="r4"
+                      name="Against Ice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Fighting]"
+                      dataType="r4"
+                      name="Against Fighting" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Poison]"
+                      dataType="r4"
+                      name="Against Poison" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Ground]"
+                      dataType="r4"
+                      name="Against Ground" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Flying]"
+                      dataType="r4"
+                      name="Against Flying" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Psychic]"
+                      dataType="r4"
+                      name="Against Psychic" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Bug]"
+                      dataType="r4"
+                      name="Against Bug" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Rock]"
+                      dataType="r4"
+                      name="Against Rock" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Ghost]"
+                      dataType="r4"
+                      name="Against Ghost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Dragon]"
+                      dataType="r4"
+                      name="Against Dragon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Dark]"
+                      dataType="r4"
+                      name="Against Dark" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Steel]"
+                      dataType="r4"
+                      name="Against Steel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output].ExternalColumns[Against Fairy]"
+                      dataType="r4"
+                      name="Against Fairy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - Pokemon_Wizard.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - Pokemon_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{DE7AF77C-26AC-48B2-B162-61BE5CABF32E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FC557D60-5E30-4A99-9128-432C10661A94}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[Pokemon_Wizard] (&#xA;[Number] smallint,&#xA;[Name] varchar(27),&#xA;[Type 1] varchar(8),&#xA;[Type 2] varchar(8),&#xA;[Abilities] varchar(48),&#xA;[HP] smallint,&#xA;[Att] smallint,&#xA;[Def] smallint,&#xA;[Spa] smallint,&#xA;[Spd] smallint,&#xA;[Spe] smallint,&#xA;[BST] smallint,&#xA;[Mean] real,&#xA;[Standard Deviation] real,&#xA;[Generation] real,&#xA;[Experience type] varchar(11),&#xA;[Experience to level 100] int,&#xA;[Final Evolution] real,&#xA;[Catch Rate] smallint,&#xA;[Legendary] real,&#xA;[Mega Evolution] real,&#xA;[Alolan Form] real,&#xA;[Galarian Form] real,&#xA;[Against Normal] real,&#xA;[Against Fire] real,&#xA;[Against Water] real,&#xA;[Against Electric] real,&#xA;[Against Grass] real,&#xA;[Against Ice] real,&#xA;[Against Fighting] real,&#xA;[Against Poison] real,&#xA;[Against Ground] real,&#xA;[Against Flying] real,&#xA;[Against Psychic] real,&#xA;[Against Bug] real,&#xA;[Against Rock] real,&#xA;[Against Ghost] real,&#xA;[Against Dragon] real,&#xA;[Against Dark] real,&#xA;[Against Steel] real,&#xA;[Against Fairy] real&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{F6C0747F-7A92-486C-A7FC-99AE1868EEA0\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{F6C0747F-7A92-486C-A7FC-99AE1868EEA0}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{F6C0747F-7A92-486C-A7FC-99AE1868EEA0}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
