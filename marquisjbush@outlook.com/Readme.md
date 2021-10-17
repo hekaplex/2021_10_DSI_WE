@@ -1,3 +1,5 @@
+
+=======
 # Class Goals
 ## Goal is to learn the following software to help me with my capstone. 
 
@@ -5,3 +7,4 @@
 * Power BI
 * Python/Anaconda
 * Big Data
+
