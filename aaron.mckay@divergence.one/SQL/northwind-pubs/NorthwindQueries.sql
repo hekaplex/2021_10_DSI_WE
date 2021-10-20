@@ -1,5 +1,10 @@
--- This query is using the Northwind sample database provided by microsoft.  It is connected to localhost. Database name NORTHWIND. The SQL server extention is installed in VS Code
+-- This query is using the Northwind sample database provided by microsoft.
+-- It is connected to localhost: CARGOSTUD2/aaron. Database name NORTHWIND.
+-- The SQL server extention for VS Code is installed and is used to make the 
+-- connection to the localhost database and run the query practice challenges.
 
+-- The following queries are taken from the book 
+-- "SQL Practice Problems. 57 beginning, Intermediate, and Advanced Challenges"
 
 
 -- 1. Which Shippers do we have?
