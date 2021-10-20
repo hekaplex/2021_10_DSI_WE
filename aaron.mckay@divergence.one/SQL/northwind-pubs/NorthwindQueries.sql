@@ -1,3 +1,7 @@
+-- This query is using the Northwind sample database provided by microsoft.  It is connected to localhost. Database name NORTHWIND. The SQL server extention is installed in VS Code
+
+
+
 -- 1. Which Shippers do we have?
 select * from Shippers;
 
