@@ -8,35 +8,72 @@
 
 
 -- 1. Which Shippers do we have?
-select * from Shippers;
+select * 
+from Shippers;
 
 -- 2. Select Certain Fields from Categories
-select CategoryName,Description from Categories;
+select CategoryName, Description 
+from Categories;
 
 -- 3. Sales Representatives 
-select FirstName, LastName, HireDate from Employees where Title = 'Sales Representative';
+select FirstName, LastName, HireDate 
+from Employees 
+where Title = 'Sales Representative';
 
 -- 4. Sales Representatives from the USA
-select FirstName, LastName, HireDate from Employees where Title = 'Sales Representative' and Country = 'USA';
+select FirstName, LastName, HireDate 
+from Employees 
+where Title = 'Sales Representative' and Country = 'USA';
 
 -- 5. Orders placed by specific EmployeeID
-select OrderID, OrderDate from Orders where EmployeeID = '5';
+select OrderID, OrderDate 
+from Orders 
+where EmployeeID = '5';
 
 -- 6. Suppliers and ContactTitles
-select SupplierID, ContactName, ContactTitle from Suppliers where ContactTitle <> 'Marketing Manager';
+select SupplierID, ContactName, ContactTitle 
+from Suppliers 
+where ContactTitle <> 'Marketing Manager';
 
 -- 7. Products with "queso" in ProductName
-select ProductID, ProductName from Products where ProductName like '%queso%';
+select ProductID, ProductName 
+from Products 
+where ProductName like '%queso%';
 
 -- 8. Orders shipping to France or Belgium
-select OrderID, CustomerID, ShipCountry from Orders where ShipCountry = 'France' OR ShipCountry = 'Belgium';
-select OrderID, CustomerID, ShipCountry from Orders where ShipCountry IN ('France', 'Belgium');
+select OrderID, CustomerID, ShipCountry 
+from Orders 
+where ShipCountry = 'France' OR ShipCountry = 'Belgium';
+--
+select OrderID, CustomerID, ShipCountry 
+from Orders 
+where ShipCountry IN ('France', 'Belgium');
 -- Two different ways are shown that give the same result. Use either the 'IN' comparitor or the 'OR' comparitor
 
 -- 9. Orders shipping to any country in Latin America
-select OrderID, CustomerID, ShipCountry from Orders where ShipCountry IN ('Brazil', 'Mexico', 'Argentina', 'Venezuela'); 
+select OrderID, CustomerID, ShipCountry 
+from Orders 
+where ShipCountry IN ('Brazil', 'Mexico', 'Argentina', 'Venezuela'); 
 
 -- 10. Employees, in order of age with age ascending
-select firstname, lastname, title, birthdate from Employees order by birthdate ASC;  
+select firstname, lastname, title, birthdate 
+from Employees 
+order by birthdate ASC;  
 
--- 11. 
+-- 11. Showing only the Date with a DateTime field
+select LastName, FirstName, Title, Convert (Date, BirthDate) As BirthDate
+from Employees;
+
+-- 12. Employee's Full Name
+SELECT FirstName, LastName, CONCAT (FirstName, ' ', LastName) AS FullName
+From Employees;
+
+-- 13. OrderDetails amount per line item
+Select OrderID, ProductID, UnitPrice, Quantity, UnitPrice * Quantity As TotalPrice
+From [Order Details]
+Order By OrderID, ProductID;
+
+-- 14. How Many Customers?
+SELECT Count(*) AS TotalCustomers From Customers;
+
+-- 15. When was the first order?
