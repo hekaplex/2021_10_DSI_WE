@@ -77,3 +77,27 @@ Order By OrderID, ProductID;
 SELECT Count(*) AS TotalCustomers From Customers;
 
 -- 15. When was the first order?
+SELECT min(orderdate) as FirstOrder 
+From Orders;
+
+-- 16. Countries Where there are customers
+select Country 
+from customers
+group by Country; 
+
+-- 17. Contact titles for customers
+SELECT ContactTitle, Count(contacttitle) as TotalContactTitle
+from Customers
+Group by ContactTitle
+
+-- 18. Products with associated supplier names
+select ProductID, ProductName, CompanyName
+From Products
+JOIN suppliers on products.supplierid = suppliers.SupplierID;
+
+-- 19. Orders and Shippers that was used
+SELECT OrderID, convert (date, OrderDate) AS OrderDate, CompanyName as Shipper
+FROM Orders
+JOIN shippers on orders.shipvia = shippers.ShipperID
+Where orderid < 10270
+Order by OrderID
