@@ -1,0 +1,62 @@
+CarName,carbody,drivewheel,wheelbase,carlength,carwidth,carheight,curbweight,cylindernumber,enginesize,boreratio,horsepower,peakrpm,citympg,highwaympg,price,engsize_bin,curbweight_bin,horsepower_bin
+volvo 145e (sw),sedan,rwd,104.3,188.8,67.2,56.2,2912,four,141,3.78,114,5400,23,28,12940,Small,2717.8,86.2
+honda accord lx,sedan,fwd,96.5,163.4,64,54.5,2010,four,92,2.91,76,6000,30,34,7295,Small,1819,56
+honda civic,hatchback,fwd,93.7,150,64,52.6,1837,four,79,2.91,60,5500,38,42,5399,Small,1819,56
+toyota corona,hatchback,fwd,95.7,158.7,63.6,54.5,2040,four,92,3.05,62,4800,31,38,6338,Small,1819,56
+toyota corolla,hatchback,fwd,95.7,166.3,64.4,52.8,2275,four,110,3.27,56,4500,38,47,7788,Small,2268.4,56
+mitsubishi g4,hatchback,fwd,93,157.3,63.8,50.8,2145,four,98,3.03,102,5500,24,30,7689,Small,1819,86.2
+subaru tribeca,wagon,fwd,97,173.5,65.4,53,2455,four,108,3.62,94,5200,25,31,10198,Small,2268.4,86.2
+bmw x3,sedan,rwd,110,197,70.9,56.3,3505,six,209,3.62,182,5400,15,20,36880,Large,3167.2,176.8
+toyota corolla,hardtop,rwd,98.4,176.2,65.6,52,2536,four,146,3.62,116,4800,24,30,9639,Small,2268.4,86.2
+toyota corona,hatchback,fwd,102.4,175.6,66.5,53.9,2414,four,122,3.31,92,4200,27,32,9988,Small,2268.4,86.2
+dodge coronet custom (sw),hatchback,fwd,95.9,173.2,66.3,50.2,2811,four,156,3.6,145,5000,19,24,12964,Large,2717.8,116.4
+mitsubishi mirage g4,sedan,fwd,96.3,172.4,65.4,51.6,2403,four,110,3.17,116,5500,23,30,9279,Small,2268.4,86.2
+honda civic 1300,hatchback,fwd,96.5,167.5,65.2,53.3,2289,four,110,3.15,86,5800,27,33,9095,Small,2268.4,56
+buick skyhawk,sedan,rwd,115.6,202.6,71.7,56.3,3770,five,183,3.58,123,4350,22,25,31600,Large,3616.6,116.4
+toyota celica gt liftback,sedan,rwd,94.5,168.7,64,52.6,2265,four,98,3.24,112,6600,26,29,9298,Small,1819,86.2
+toyota corona,hatchback,rwd,94.5,168.7,64,52.6,2204,four,98,3.19,70,4800,29,34,8238,Small,1819,56
+subaru dl,hatchback,4wd,93.3,157.3,63.8,55.7,2240,four,108,3.62,73,4400,26,31,7603,Small,1819,56
+toyota cressida,convertible,rwd,98.4,176.2,65.6,53,2975,four,146,3.62,116,4800,24,30,17669,Small,2717.8,86.2
+saab 99le,sedan,fwd,99.1,186.6,66.5,56.1,2695,four,121,3.54,110,5250,21,28,12170,Small,2268.4,86.2
+mitsubishi outlander,hatchback,fwd,95.9,173.2,66.3,50.2,2833,four,156,3.58,145,5000,19,24,12629,Large,2717.8,116.4
+plymouth fury iii,hatchback,fwd,93.7,157.3,63.8,50.6,1967,four,90,2.97,68,5500,31,38,6229,Small,1819,56
+volvo 245,wagon,rwd,104.3,188.8,67.2,57.5,3042,four,141,3.78,114,5400,24,28,16515,Small,2717.8,86.2
+mitsubishi outlander,sedan,fwd,96.3,172.4,65.4,51.6,2403,four,110,3.17,116,5500,23,30,9279,Small,2268.4,86.2
+nissan otti,sedan,fwd,100.4,184.6,66.5,55.1,3060,six,181,3.43,152,5200,19,25,13499,Large,2717.8,146.6
+mazda glc,sedan,rwd,104.9,175,66.1,54.4,2670,four,140,3.76,120,5000,19,27,18280,Small,2268.4,116.4
+honda civic cvcc,hatchback,fwd,86.6,144.6,63.9,50.8,1819,four,92,2.91,76,6000,31,38,6855,Small,1819,56
+volkswagen rabbit custom,sedan,fwd,100.4,180.2,66.9,55.1,2579,four,97,3.01,68,4500,33,38,13845,Small,2268.4,56
+dodge dart custom,wagon,fwd,103.3,174.6,64.6,59.8,2535,four,122,3.34,88,5000,24,30,8921,Small,2268.4,86.2
+mitsubishi lancer,hatchback,fwd,93.7,157.3,64.4,50.8,1944,four,92,2.97,68,5500,31,38,6189,Small,1819,56
+alfa-romero stelvio,convertible,rwd,88.6,168.8,64.1,48.8,2548,four,130,3.47,111,5000,21,27,16500,Small,2268.4,86.2
+buick skylark,convertible,rwd,96.6,180.3,70.5,50.8,3685,eight,234,3.46,155,4750,16,18,35056,Large,3616.6,146.6
+toyota corona liftback,hardtop,rwd,98.4,176.2,65.6,52,2540,four,146,3.62,116,4800,24,30,8449,Small,2268.4,86.2
+porsche boxter,convertible,rwd,89.5,168.9,65,51.6,2800,six,194,3.74,207,5900,17,25,37028,Large,2717.8,176.8
+porsche cayenne,hardtop,rwd,89.5,168.9,65,51.6,2756,six,194,3.74,207,5900,17,25,34028,Large,2717.8,176.8
+volvo 144ea,wagon,rwd,104.3,188.8,67.2,57.5,3034,four,141,3.78,114,5400,23,28,13415,Small,2717.8,86.2
+nissan kicks,hatchback,rwd,91.3,170.7,67.9,49.7,3139,six,181,3.43,200,5200,17,23,19699,Large,2717.8,176.8
+dodge colt hardtop,sedan,fwd,93.7,157.3,63.8,50.6,1989,four,90,2.97,68,5500,31,38,6692,Small,1819,56
+saab 99e,hatchback,fwd,99.1,186.6,66.5,56.1,2658,four,121,3.54,110,5250,21,28,11850,Small,2268.4,86.2
+mazda glc 4,hatchback,rwd,95.3,169,65.7,49.6,2500,two,80,3.33,135,6000,16,23,15645,Small,2268.4,116.4
+mazda rx-4,sedan,fwd,93.1,166.8,64.2,54.1,1945,four,91,3.03,68,5000,31,38,6695,Small,1819,56
+toyota mark ii,hatchback,fwd,102.4,175.6,66.5,53.9,2458,four,122,3.31,92,4200,27,32,11248,Small,2268.4,86.2
+peugeot 604sl,sedan,rwd,108,186.7,68.3,56,3130,four,134,3.61,142,5600,18,24,18150,Small,2717.8,116.4
+subaru brz,sedan,fwd,97.2,172,65.4,52.5,2190,four,108,3.62,82,4400,28,33,7775,Small,1819,56
+honda civic cvcc,hatchback,fwd,93.7,150,64,52.6,1956,four,92,2.91,76,6000,30,34,7129,Small,1819,56
+dodge rampage,hatchback,fwd,93.7,157.3,63.8,50.8,1876,four,90,2.97,68,5500,37,41,5572,Small,1819,56
+volvo 144ea,sedan,rwd,109.1,188.8,68.8,55.5,3049,four,141,3.78,160,5300,19,25,19045,Small,2717.8,146.6
+honda civic (auto),sedan,fwd,96.5,169.1,66,51,2293,four,110,3.15,100,5500,25,31,10345,Small,2268.4,86.2
+mazda rx-7 gs,hatchback,rwd,95.3,169,65.7,49.6,2385,two,70,3.33,101,6000,17,23,13645,Small,2268.4,86.2
+toyota starlet,sedan,rwd,104.5,187.8,66.5,54.1,3131,six,171,3.27,156,5200,20,24,15690,Large,2717.8,146.6
+honda prelude,sedan,fwd,96.5,175.4,65.2,54.1,2304,four,110,3.15,86,5800,27,33,8845,Small,2268.4,56
+buick electra 225 custom,sedan,rwd,110,190.9,70.3,56.5,3515,five,183,3.58,123,4350,22,25,25552,Large,3167.2,116.4
+toyota celica gt,sedan,fwd,102.4,175.6,66.5,54.9,2480,four,110,3.27,73,4500,30,33,10698,Small,2268.4,56
+nissan rogue,hatchback,fwd,97.2,173.4,65.2,54.7,2324,four,120,3.33,97,5200,27,34,8949,Small,2268.4,86.2
+jaguar xj,sedan,rwd,113,199.6,69.6,52.8,4066,six,258,3.63,176,4750,15,19,32250,Large,3616.6,146.6
+peugeot 504,sedan,rwd,107.9,186.7,68.4,56.7,3075,four,120,3.46,97,5000,19,24,16630,Small,2717.8,86.2
+audi 5000s (diesel),hatchback,4wd,99.5,178.2,67.9,52,3053,five,131,3.13,160,5500,16,22,17859.167,Small,2717.8,146.6
+peugeot 505s turbo diesel,wagon,rwd,114.2,198.9,68.4,58.7,3485,four,152,3.7,95,4150,25,25,17075,Large,3167.2,86.2
+mitsubishi g4,hatchback,fwd,96.3,173,65.4,49.4,2328,four,122,3.35,88,5000,25,32,8499,Small,2268.4,86.2
+subaru dl,wagon,4wd,96.9,173.6,65.4,54.9,2420,four,108,3.62,82,4800,23,29,8013,Small,2268.4,56
+honda civic 1500 gl,wagon,fwd,96.5,157.1,63.9,58.3,2024,four,92,2.92,76,6000,30,34,7295,Small,1819,56
+volvo 264gl,sedan,rwd,109.1,188.8,68.9,55.5,3062,four,141,3.78,114,5400,19,25,22625,Small,2717.8,86.2
