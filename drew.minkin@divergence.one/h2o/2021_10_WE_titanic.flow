@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "cells": [
+    {
+      "type": "cs",
+      "input": "assist"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"c:\\\\h2o\\\\train.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs:\\\\c:\\\\h2o\\\\train.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs:\\\\c:\\\\h2o\\\\train.csv\"]\n  destination_frame: \"train.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 12\n  single_quotes: false\n  column_names: [\"PassengerId\",\"Survived\",\"Pclass\",\"Name\",\"Sex\",\"Age\",\"SibSp\",\"Parch\",\"Ticket\",\"Fare\",\"Cabin\",\"Embarked\"]\n  column_types: [\"Numeric\",\"Enum\",\"a\",\"String\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Numeric\",\"Enum\",\"Enum\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 4194304"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"train.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "assist splitFrame, \"train.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "splitFrame \"train.hex\", [0.8], [\"train.hex_0.80\",\"test.hex_0.20\"], 519823"
+    },
+    {
+      "type": "cs",
+      "input": "splitFrame \"train.hex\", [0.8], [\"train.hex_0.80_enum\",\"test.hex_0.20_enum\"], 519823"
+    },
+    {
+      "type": "cs",
+      "input": "assist buildModel, null, training_frame: \"train.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"titanic_drf\",\"training_frame\":\"train.hex_0.80\",\"validation_frame\":\"test.hex_0.20\",\"nfolds\":6,\"response_column\":\"Survived\",\"ignored_columns\":[\"PassengerId\",\"Ticket\",\"Cabin\"],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":-1,\"mtries\":-1,\"sample_rate\":0.632,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"balance_classes\":false,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"gainslift_bins\":-1,\"auc_type\":\"AUTO\",\"keep_cross_validation_models\":true,\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false,\"check_constant_response\":true}"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"titanic_drf_enum\",\"training_frame\":\"train.hex_0.80_enum\",\"validation_frame\":\"test.hex_0.20_enum\",\"nfolds\":6,\"response_column\":\"Survived\",\"ignored_columns\":[\"PassengerId\",\"Ticket\",\"Cabin\"],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":-1,\"mtries\":-1,\"sample_rate\":0.632,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"balance_classes\":false,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"gainslift_bins\":-1,\"auc_type\":\"AUTO\",\"keep_cross_validation_models\":true,\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false,\"check_constant_response\":true}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"titanic_drf\""
+    },
+    {
+      "type": "cs",
+      "input": "predict frame: \"train.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "predict model: \"titanic_drf\", frame: \"train.hex\", predictions_frame: \"prediction-titanic\""
+    },
+    {
+      "type": "cs",
+      "input": "bindFrames \"combined-prediction-titanic\", [ \"prediction-titanic\", \"train.hex\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"combined-prediction-titanic\""
+    },
+    {
+      "type": "cs",
+      "input": "assist"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles"
+    },
+    {
+      "type": "cs",
+      "input": "splitFrame"
+    },
+    {
+      "type": "cs",
+      "input": "exportFrame \"combined-prediction-titanic\""
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs:\\\\c:\\\\h2o\\\\train.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs:\\\\c:\\\\h2o\\\\train.csv\"]\n  destination_frame: \"train.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 12\n  single_quotes: false\n  column_names: [\"PassengerId\",\"Survived\",\"Pclass\",\"Name\",\"Sex\",\"Age\",\"SibSp\",\"Parch\",\"Ticket\",\"Fare\",\"Cabin\",\"Embarked\"]\n  column_types: [\"Numeric\",\"Numeric\",\"Numeric\",\"String\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Enum\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 4194304"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"train.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "changeColumnType frame: \"train.hex\", column: \"PassengerId\", type: 'enum'"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"titanic_drf_enum\""
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary"
+    },
+    {
+      "type": "cs",
+      "input": "changeColumnType frame: \"train.hex_0.80_enum\", column: \"Survived\", type: 'enum'"
+    },
+    {
+      "type": "cs",
+      "input": "getFrames"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"test.hex_0.20_enum\""
+    },
+    {
+      "type": "cs",
+      "input": "changeColumnType frame: \"test.hex_0.20_enum\", column: \"Survived\", type: 'enum'"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"titanic_drf_enum\""
+    }
+  ]
+}
