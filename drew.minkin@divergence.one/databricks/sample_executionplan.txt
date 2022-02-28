@@ -1,0 +1,27 @@
+aggregatedDowDF = (pageviewsEnhancedDF
+  .groupBy(col("dow"), col("longName"), col("abbreviated"), col("shortName"))  
+  .sum("requests")                                             
+  .withColumnRenamed("sum(requests)", "Requests")
+  .orderBy(col("dow"))
+)
+
+
+= Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [dow#4414 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(dow#4414 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [id=#4801]
+      +- Project [dow#4414, longName#4341, abbreviated#4406, shortName#4343, sum(requests#4370)#4444L AS Requests#4451L]
+         +- HashAggregate(keys=[dow#4414, longName#4341, abbreviated#4406, shortName#4343], functions=[finalmerge_sum(merge sum#4463L) AS sum(requests#4370)#4444L])
+            +- Exchange hashpartitioning(dow#4414, longName#4341, abbreviated#4406, shortName#4343, 200), ENSURE_REQUIREMENTS, [id=#4797]
+               +- HashAggregate(keys=[dow#4414, longName#4341, abbreviated#4406, shortName#4343], functions=[merge_sum(merge sum#4463L) AS sum#4463L])
+                  +- Project [intDOW#4348 AS dow#4414, longName#4341, dow#4375 AS abbreviated#4406, shortName#4343, sum#4463L]
+                     +- BroadcastHashJoin [dow#4375], [dow#4354], Inner, BuildRight, false
+                        :- HashAggregate(keys=[dow#4375], functions=[partial_sum(requests#4370) AS sum#4463L])
+                        :  +- Project [requests#4370, date_format(cast(timestamp#4368 as timestamp), E, Some(Etc/UTC)) AS dow#4375]
+                        :     +- Filter isnotnull(date_format(cast(timestamp#4368 as timestamp), E, Some(Etc/UTC)))
+                        :        +- FileScan parquet [timestamp#4368,requests#4370] Batched: true, DataFilters: [isnotnull(date_format(cast(timestamp#4368 as timestamp), E, Some(Etc/UTC)))], Format: Parquet, Location: InMemoryFileIndex(1 paths)[dbfs:/mnt/training/wikipedia/pageviews/pageviews_by_second.parquet], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<timestamp:string,requests:int>
+                        +- BroadcastExchange HashedRelationBroadcastMode(ArrayBuffer(input[2, string, true]),false), [id=#4792]
+                           +- Project [dow#4340 AS intDOW#4348, longName#4341, abbreviated#4342 AS dow#4354, shortName#4343]
+                              +- Filter isnotnull(abbreviated#4342)
+                                 +- FileScan parquet [dow#4340,longName#4341,abbreviated#4342,shortName#4343] Batched: true, DataFilters: [isnotnull(abbreviated#4342)], Format: Parquet, Location: InMemoryFileIndex(1 paths)[dbfs:/mnt/training/day-of-week], PartitionFilters: [], PushedFilters: [IsNotNull(abbreviated)], ReadSchema: struct<dow:int,longName:string,abbreviated:string,shortName:string>
+
