@@ -1,5 +1,5 @@
 # install using the command in the Python environment directory:
-#           conda env update --file environment.yml --prune
+#           conda env create --file environment.yml --prune
 name: py_pbix_svc
 channels:
   - javascript
